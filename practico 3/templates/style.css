@@ -1,0 +1,21 @@
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    
+  }
+  
+  tbody {
+    background-color: black;
+    color: white;
+  }
+  
+  
+  table, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  table{
+      width: 50%;
+  }
