@@ -69,8 +69,7 @@ foreach($pagos as $pago){
         <td>$pago->deudor</td>
         <td>$pago->cuota</td>
         <td>$pago->cuota_capital</td>
-        <td>$pago->fecha_pago</td>
-                
+        <td>$pago->fecha_pago</td> 
     </tr>
     
     ";
