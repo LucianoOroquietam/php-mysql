@@ -1,48 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Base De Datos </title>
-</head>
-</html>
+<?phpfunction showHome(){ ?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Base De Datos </title>
+    </head>
+    
+    
+    
+    <body>
+    
+        <form >
+            <label for="">Deudor</label>
+            <input type="text" name="" id="">
+            <label for="">Cuota</label>
+            <input type="number" name="" id="">
+            <label for="">Cuota_capital</label>
+            <input type="number" name="" id="">
+            <label for="">Fecha_pago</label>
+            <input type="date" name="" id="">
+    
+            <button type="submit">Enviar</button>
+        </form>
+        
+    </body>
+    
+    
+    </html>
+    
+    
+
+<?php}?>
 
 
 
 <?php
-
-
 require_once "pagosBD.php";
-
-
-//$pagos = getPagos();
-
-//insertPay();
-
-showTable();
-//arreglo a iterar , elemento que va cambiando en cada iteracion
-
 function showTable(){
 
     echo "<table>";
-echo 
-    "
-    
-    <thead>
-     <tr>
-        <th>#</th>
-        <th>Deudor</th>
-        <th>Cuota</th>
-        <th>Cuota_capital</th>
-        <th>Fecha_pago</th>
+    echo 
+        "
+        
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Deudor</th>
+            <th>Cuota</th>
+            <th>Cuota_capital</th>
+            <th>Fecha_pago</th>
 
-     </tr>
-    
-     </thead>
+        </tr>
+        
+        </thead>
 
-    ";
+        ";
 foreach(getPagos() as $pago){
     echo 
     "
@@ -60,9 +76,17 @@ foreach(getPagos() as $pago){
 }
 echo "</table>";
 
-
-
-
-
 }
+showTable();
+
+
+//$pagos = getPagos();
+
+//insertPay();
+
+
+//arreglo a iterar , elemento que va cambiando en cada iteracion
+?>
+
+
 
