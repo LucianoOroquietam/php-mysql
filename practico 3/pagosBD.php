@@ -33,3 +33,10 @@ function insertPay($deudor, $cuota, $cuota_capital, $fecha_pago){
     
 
 }
+
+function deletePayFromDB($id){
+    $db = connectDB();
+    $query = $db->prepare("DELETE FROM deudas WHERE id=?");
+    $query->execute(array($id));
+    
+}

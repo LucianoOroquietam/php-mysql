@@ -14,6 +14,9 @@
 
 <body>
 
+
+    
+
     <form method="post" action="createPay">
         <label for="">Deudor</label>
         <input type="text" name="deudor" id="">
@@ -48,9 +51,16 @@
 
 function createPay(){
     
-
     insertPay($_POST['deudor'],$_POST['cuota'],$_POST['capital'], $_POST['fecha']);
+    header("Location: ". BASE_URL ."home");
+    //header("Location: http://localhost/proyectos/php/WEB%202/practico%203/home"); 
 
+}
+
+function deletePay($id){
+    deletePayFromDB($id);
+    header("Location: ". BASE_URL ."home");
+    //header("Location: http://localhost/proyectos/php/WEB%202/practico%203/home"); 
 }
 
 
@@ -69,6 +79,7 @@ function showTable(){
             <th>Cuota</th>
             <th>Cuota_capital</th>
             <th>Fecha_pago</th>
+            <th></th>
 
         </tr>
         
@@ -84,10 +95,14 @@ foreach(getPagos() as $pago){
         <td>$pago->cuota</td>
         <td>$pago->cuota_capital</td>
         <td>$pago->fecha_pago</td>
+        <td><a href='delete/$pago->id'>Borrar</a></td>
  
     </tr>
+   
     
     ";
+
+    
     
 }
 echo "</table>";

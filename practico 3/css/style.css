@@ -8,14 +8,29 @@ th {
   tbody {
     background-color: black;
     color: white;
+    
   }
   
   
   table, td, tr {
     border: 1px solid black;
     border-collapse: collapse;
+    margin: 5px;
   }
 
   table{
       width: 50%;
   }
+
+
+  td a:hover{
+    
+    background-color: #4CAF50;
+  }
+
+  td a{
+    color: aliceblue;
+    border: 1px solid wheat;
+    text-decoration: none;
+  }
+
