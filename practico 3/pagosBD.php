@@ -25,10 +25,11 @@ return $query->fetchAll(PDO::FETCH_OBJ);
 
 }
 
-function insertPay(){
+function insertPay($deudor, $cuota, $cuota_capital, $fecha_pago){
     $db=connectDB();
 
-    $query = $db->prepare("INSERT INTO deudas(deudor,cuota,cuota_capital,fecha_pago) VALUES(?,?,?,?)"); //inserta en deudas columna deudor el valor x
-    $query->execute(array('Marcos Roldos','3','1500','19/5/2022')); //el valor lo va a sacar de este arreglo
+    $query = $db->prepare("INSERT INTO deudas(deudor, cuota, cuota_capital, fecha_pago) VALUES(?, ? , ? , ?)"); //inserta en deudas columna deudor el valor x
+    $query->execute(array($deudor,$cuota,$cuota_capital,$fecha_pago)); //el valor lo va a sacar de este arreglo
+    
 
 }
