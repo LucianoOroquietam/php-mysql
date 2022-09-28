@@ -24,6 +24,9 @@ switch($partsURL[0]){
     case 'delete':
         deletePay($partsURL[1]);
         break;
+    case 'updatePay':
+        updatePay($partsURL[1]);
+        break;    
 
     default: 
     echo("404 not found");
