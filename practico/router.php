@@ -5,8 +5,12 @@ require_once "controller/deudasController.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
 
+$action='home';
 
-$action = $_GET ['action'];
+if(!empty($_GET ['action'])){
+ $action = $_GET ['action'];   
+}
+
 
 //viene el action lo parto por barra
     
@@ -20,16 +24,21 @@ switch($partsURL[0]){
     case 'home':
         $deudasController->showHome();
         break;
+    case "FormAdd":
+        $deudasController->showForm("createPay");
+        break;
     case 'createPay':
         $deudasController->createPay();
         break;
     case 'delete':
         $deudasController->deletePay($partsURL[1]);
         break;
-    /*case 'updatePay':
-        $deudasController->updatePay($partsURL[1]);
+    case 'update':
+        $deudasController->showForm("update");
         break;    
-    */    
+    case 'update':
+        $deudasController->updatePay($partsURL[1]);
+        break;
     default: 
     echo("404 not found");
     break;        

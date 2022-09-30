@@ -8,6 +8,37 @@ class deudasView{
 
     }
 
+
+    function showForm($action,$pagos){
+        if($action=="update"){
+             foreach ($pagos as $pago) {
+                ?>
+                # code...
+             }
+        }
+        ?>
+        
+        <form method="post" action="<?php echo $action?>">
+            <label for="">Deudor</label>
+            <input type="text" name="deudor" id="">
+            
+            <label for="">Cuota</label>
+            <input type="number" name="cuota" id="">
+
+            <label for="">Cuota_capital</label>
+            <input type="number" name="capital" id="">
+            
+            <label for="">Fecha_pago</label>
+            <input type="date" name="fecha" id="">
+
+            <button type="submit">Guardar</button>
+        </form>
+    
+
+        <?php
+
+
+    }
     function showDeudas($pagos){
 
         $html = '<!DOCTYPE html>
@@ -20,31 +51,9 @@ class deudasView{
                 <title>Base De Datos </title>
             </head>
             
-            
-            
             <body>
-            
-            
-                
-            
-                <form method="post" action="createPay">
-                    <label for="">Deudor</label>
-                    <input type="text" name="deudor" id="">
-                    
-                    <label for="">Cuota</label>
-                    <input type="number" name="cuota" id="">
-            
-                    <label for="">Cuota_capital</label>
-                    <input type="number" name="capital" id="">
-                    
-                    <label for="">Fecha_pago</label>
-                    <input type="date" name="fecha" id="">
-            
-                    <button type="submit">Guardar</button>
-                </form>
-                
+        
             </body>
-            
             
             </html>';
             
@@ -90,7 +99,14 @@ class deudasView{
                 
             }
             echo "</table>";
+
+            
+        $button = '
         
+        <a href="FormAdd">Crear User</a>
+        ';
+
+        echo $button;
       
         
         }

@@ -23,10 +23,14 @@ class deudasController{
             
             
             }
-            
+            function showForm($action){
+                $pagos = $this->model->getPagos();
+
+
+                $this->view->showForm($action,$pagos);
+            }
             
             function createPay(){
-    
                 $this->model->insertPay($_POST['deudor'],$_POST['cuota'],$_POST['capital'], $_POST['fecha']);
                 $this->view->showHomeLocation();
 
@@ -39,7 +43,11 @@ class deudasController{
                  
             }
             
-            
+            function updatePay($id){
+                
+                $this->model->updatePay($_POST['deudor'],$_POST['cuota'],$_POST['capital'], $_POST['fecha']);
+                $this->view->showHomeLocation();
+            }
             
     }
 

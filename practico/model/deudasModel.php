@@ -37,6 +37,11 @@ class deudasModel{
         $query->execute(array($id));
         
     }
+    function updatePay($id,$deudor,$cuota,$cuota_capital,$fecha_pago){
+        var_dump($deudor,$cuota,$cuota_capital,$fecha_pago,$id);
+        $query = $this->db->prepare("UPDATE deudas SET deudor=?,cuota=?,cuota_capital=?,fecha_pago=? WHERE deudas.id=?");
+        $query->execute(array($deudor,$cuota,$cuota_capital,$fecha_pago,$id));
+    }
 }
 
 
