@@ -79,7 +79,7 @@ class deudasView{
                     <td>$pay->cuota_capital</td>
                     <td>$pay->fecha_pago</td>
                     <td><a href='delete/$pay->id'>Delete</a></td>
-                    <td><a href='update/$pay->id'>Done</a></td>
+                    <td><a href='update/$pay->id'>Edit</a></td>
             
                 </tr>
             
@@ -94,4 +94,10 @@ class deudasView{
       
         
         }
+
+        function showHomeLocation(){
+            header("Location: ". BASE_URL ."home");
+            //header("Location: http://localhost/proyectos/php/WEB%202/practico%203/home"); 
+        }
+
     }

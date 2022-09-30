@@ -21,6 +21,22 @@ class deudasModel{
             
             
             return $pagos;
+            
             //cerrar la conexion a la DB no es neesario en PDO
         }
+
+    function insertPay($deudor,$cuota,$cuota_capital,$fecha_pago){
+        $query = $this->db->prepare("INSERT INTO deudas(deudor,cuota,cuota_capital,fecha_pago) VALUES(?, ?, ?, ?)");
+        $query->execute(array($deudor,$cuota,$cuota_capital,$fecha_pago)); 
+
+    }
+    
+    function deletePayFromDB($id){
+        
+        $query = $this->db->prepare("DELETE FROM deudas WHERE id=?");
+        $query->execute(array($id));
+        
+    }
 }
+
+

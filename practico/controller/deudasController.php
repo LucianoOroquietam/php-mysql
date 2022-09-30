@@ -22,7 +22,24 @@ class deudasController{
 
             
             
-            } 
+            }
+            
+            
+            function createPay(){
+    
+                $this->model->insertPay($_POST['deudor'],$_POST['cuota'],$_POST['capital'], $_POST['fecha']);
+                $this->view->showHomeLocation();
+
+            }
+            
+            function deletePay($id){
+                $this->model->deletePayFromDB($id);
+                $this->view->showHomeLocation();
+                //showHomeLocation() -> header("Location: ". BASE_URL ."home");
+                 
+            }
+            
+            
             
     }
 

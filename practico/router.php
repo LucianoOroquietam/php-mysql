@@ -1,8 +1,6 @@
 
 <?php
 
-require_once "deudas.php";
-require_once "pagosBD.php";
 require_once "controller/deudasController.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -23,15 +21,15 @@ switch($partsURL[0]){
         $deudasController->showHome();
         break;
     case 'createPay':
-        createPay();
+        $deudasController->createPay();
         break;
     case 'delete':
-        deletePay($partsURL[1]);
+        $deudasController->deletePay($partsURL[1]);
         break;
-    case 'updatePay':
-        updatePay($partsURL[1]);
+    /*case 'updatePay':
+        $deudasController->updatePay($partsURL[1]);
         break;    
-
+    */    
     default: 
     echo("404 not found");
     break;        
