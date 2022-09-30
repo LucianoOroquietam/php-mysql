@@ -25,11 +25,22 @@ class deudasModel{
             //cerrar la conexion a la DB no es neesario en PDO
         }
 
+        function getOne($id){
+            $query = $this->db->prepare('SELECT * FROM deudas WHERE id = ?');
+            $query-> execute([$id]);
+        
+            $pay  = $query->fetch(PDO::FETCH_OBJ);
+        
+        
+            return $pay;
+        }
+
     function insertPay($deudor,$cuota,$cuota_capital,$fecha_pago){
         $query = $this->db->prepare("INSERT INTO deudas(deudor,cuota,cuota_capital,fecha_pago) VALUES(?, ?, ?, ?)");
         $query->execute(array($deudor,$cuota,$cuota_capital,$fecha_pago)); 
 
     }
+
     
     function deletePayFromDB($id){
         

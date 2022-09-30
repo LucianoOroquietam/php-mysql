@@ -10,15 +10,28 @@ class deudasView{
 
 
     function showForm($action,$pagos){
-        if($action=="update"){
-             foreach ($pagos as $pago) {
-                ?>
-                # code...
-             }
+        if($action=="update"){?>
+
+            <form method="post" action="<?php echo $action?>">
+            <label for="">Deudor</label>
+            <input type="text" value="<?php echo $pagos->deudor ?>" name="deudor" id="">
+            
+            <label for="">Cuota</label>
+            <input type="number" value="<?php echo $pagos->cuota ?>" name="cuota" id="">
+
+            <label for="">Cuota_capital</label>
+            <input type="number" value="<?php echo $pagos->cuota_capital ?>" name="capital" id="">
+            
+            <label for="">Fecha_pago</label>
+            <input type="date" value="<?php echo $pagos->fecha_pago ?>" name="fecha" id="">
+
+            <button type="submit">Guardar</button>
+        </form>
+        <?php    
         }
-        ?>
-        
-        <form method="post" action="<?php echo $action?>">
+        else{
+            ?>
+            <form method="post" action="<?php echo $action?>">
             <label for="">Deudor</label>
             <input type="text" name="deudor" id="">
             
@@ -33,9 +46,15 @@ class deudasView{
 
             <button type="submit">Guardar</button>
         </form>
+        <?php
+
+        }
+    
+        
+        
     
 
-        <?php
+        
 
 
     }

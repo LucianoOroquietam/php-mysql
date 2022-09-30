@@ -23,8 +23,10 @@ class deudasController{
             
             
             }
-            function showForm($action){
-                $pagos = $this->model->getPagos();
+            
+            function showForm($action,$id){
+                
+                $pagos = $this->model->getOne($id);
 
 
                 $this->view->showForm($action,$pagos);

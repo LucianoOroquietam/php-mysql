@@ -25,7 +25,7 @@ switch($partsURL[0]){
         $deudasController->showHome();
         break;
     case "FormAdd":
-        $deudasController->showForm("createPay");
+        $deudasController->showForm("createPay",null);
         break;
     case 'createPay':
         $deudasController->createPay();
@@ -34,7 +34,7 @@ switch($partsURL[0]){
         $deudasController->deletePay($partsURL[1]);
         break;
     case 'update':
-        $deudasController->showForm("update");
+        $deudasController->showForm("update",$partsURL[1]);
         break;    
     case 'update':
         $deudasController->updatePay($partsURL[1]);
